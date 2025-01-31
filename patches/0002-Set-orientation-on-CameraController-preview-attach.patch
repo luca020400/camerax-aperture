@@ -1,0 +1,10 @@
+--- a/camera/camera-view/src/main/java/androidx/camera/view/CameraController.java
++++ b/camera/camera-view/src/main/java/androidx/camera/view/CameraController.java
+@@ -567,6 +567,7 @@
+                 viewPort) != getViewportAspectRatioStrategy(mViewPort);
+         mViewPort = viewPort;
+         startListeningToRotationEvents();
++        mDeviceRotationListener.onRotationChanged(mViewPort.getRotation());
+         if (shouldUpdateAspectRatio) {
+             unbindAllAndRecreate();
+         }
